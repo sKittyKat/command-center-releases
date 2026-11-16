@@ -1,6 +1,6 @@
 # Command Center: the guide
 
-This guide is for version 0.2.1. It covers installing, setting up, daily use, what things cost, your data, and moving to
+This guide is for version 0.2.2. It covers installing, setting up, daily use, what things cost, your data, and moving to
 a new computer. The app's words are in **bold**.
 
 - [1. Install](#1-install)
@@ -59,8 +59,11 @@ clock. The demo stays one click away in Settings and never sends anything.
 Choose how Claude is paid for:
 - **API key**: pay as you go, billed by Anthropic. Make a key at platform.claude.com and paste it in. Command Center
   checks it with Anthropic (free), then keeps it in your system's keychain. It never shows the key again.
-- **Claude plan**: uses your Claude subscription through Claude Code. Install Claude Code, sign in to it once by running
-  `claude` in a terminal, then choose **Check**. It shares your plan's limits with your own Claude Code use.
+- **Claude plan**: uses your Claude subscription through Claude Code. Choose **Check**: Command Center looks everywhere
+  Claude Code gets installed, including the copy inside the Claude desktop app. If it finds none, install Claude Code
+  from claude.ai/install. If it isn't signed in yet, **Check** tells you exactly what to type in a terminal; sign in
+  there once with your Claude account, then choose **Check** again. It shares your plan's limits with your own Claude
+  Code use.
 
 Set the **Monthly cap**: the most Claude may use in a month ($50 to start). At the cap Claude pauses until the 1st, and
 nothing else stops. Raising the cap asks you to confirm.
