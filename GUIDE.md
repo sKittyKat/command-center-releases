@@ -1,6 +1,6 @@
 # Command Center: the guide
 
-This guide is for version 0.2.0. It covers installing, setting up, daily use, what things cost, your data, and moving to
+This guide is for version 0.2.1. It covers installing, setting up, daily use, what things cost, your data, and moving to
 a new computer. The app's words are in **bold**.
 
 - [1. Install](#1-install)
@@ -170,7 +170,7 @@ Choose **Open your inbox**, and you're done.
 
 **The touchpoints.** At 7:30 AM the morning brief, at 1:00 PM the midday sweep, at 6:00 PM the end-of-day wrap. Each
 comes as a notification that opens Today. On Mondays at 8:00 AM there's the plan for the week, and on Fridays at
-4:00 PM the review. You can move any of them to another quarter hour in Settings › When it reaches you. If the computer
+4:00 PM the review. You can move any of them to another quarter hour in Settings › Touchpoints. If the computer
 was asleep, the brief lands when it wakes.
 
 **Today** shows what's to do, about how long it takes, what Claude handled overnight, and when the next touchpoint is.
@@ -197,14 +197,16 @@ Each item says why it's where it is. Keys work in the agenda:
 
 **⌘K** on a Mac, **Ctrl+K** on Windows, opens the command bar to find anything or run a quick action.
 
-**Nothing speaks for you on its own.** Settings › What Claude may do sets, for each kind of work, whether Claude may do
+Settings has four tabs: **Claude**, **Touchpoints**, **Sources** and **Your workspace**. Long lists in them show their first rows, with **Show all**.
+
+**Nothing speaks for you on its own.** Settings › Claude sets, for each kind of work, whether Claude may do
 it (**Auto**), must ask (**Approve**) or only prepares it (**Only you**). Anything that sends, publishes or speaks for
 you is always at least **Approve**. The **Spend limit** covers money paid to others. Everything Claude and you do lands
 in the **Action log**, with **Undo** where it can have one.
 
 ## 4. More you can turn on
 
-- **Phone alerts** (Settings › When it reaches you): what can't wait (due within 4 hours or overdue), sent to your
+- **Phone alerts** (Settings › Touchpoints): what can't wait (due within 4 hours or overdue), sent to your
   phone within a minute through the free **ntfy** app.
   - Command Center makes a long random topic; subscribe to it in the app, then choose **Send a test**.
   - Quiet hours are 9 PM to 7 AM, with at most 10 alerts a day. You can change both.
@@ -248,7 +250,7 @@ in the **Action log**, with **Undo** where it can have one.
 ### Updates
 
 Once a day, with the first brief, Command Center asks this repository which version is newest:
-1. When a newer one is out, Settings › Updates and the tray say so, with **Download**.
+1. When a newer one is out, Settings › Touchpoints › Updates and the tray say so, with **Download**.
 2. Download the new installer and run it over the old app. Your data stays.
 
 Nothing downloads or installs by itself. You can turn **Check for updates** off.
@@ -281,7 +283,7 @@ See [Install](#1-install): System Settings › Privacy & Security › **Open Any
 
 ### No notifications on the Mac
 
-Allow them in System Settings › Notifications › Command Center. Settings › When it reaches you says when the system
+Allow them in System Settings › Notifications › Command Center. Settings › Touchpoints says when the system
 didn't show the last one. Your briefs still land on Today and in the menu bar.
 
 ### Google won't let me choose Internal
@@ -297,8 +299,8 @@ Center and connect again with it.
 
 ### Claude stopped sorting
 
-Settings › Where it reads from › Inbox says why: the monthly cap reached, no credit left on your Anthropic account, or a
-key this computer can't open (save it again under Settings › What Claude may do › Claude). The free rules keep filing in
+Settings › Sources › Inbox says why: the monthly cap reached, no credit left on your Anthropic account, or a
+key this computer can't open (save it again on the Claude card, in Settings › Claude). The free rules keep filing in
 the meantime.
 
 ### A restore asks for a passphrase
