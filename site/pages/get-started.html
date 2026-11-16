@@ -1,0 +1,65 @@
+<!-- {"title": "Install and set up", "description": "Download Command Center for Mac or Windows, open it the first time, and walk through the set-up: your workspace, Claude, email and Slack, sorting, books, Notion, sites and backups."} -->
+<h1>Install and set up</h1>
+<p class="lead">Download the app, open it once past your computer's check for unsigned apps, and the set-up walks you through the rest, one step at a time.</p>
+
+{{download}}
+
+<h2 id="install">Install</h2>
+<h3>Mac (Apple silicon or Intel)</h3>
+<p>Open <code>Command-Center-&lt;version&gt;-universal.dmg</code> and drag Command Center into Applications.</p>
+<ol class="steps">
+  <li>Open it once. macOS says it can't check the app, because the app isn't signed yet.</li>
+  <li>Open System Settings › Privacy &amp; Security, scroll to Command Center and choose <strong>Open Anyway</strong>.</li>
+  <li>On macOS 14 or earlier you can instead right-click the app and choose <strong>Open</strong>.</li>
+</ol>
+<p>You only do this once.</p>
+
+<h3>Windows 10 or 11 (x64 or Arm)</h3>
+<p>Run <code>Command-Center-Setup-&lt;version&gt;.exe</code>.</p>
+<ol class="steps">
+  <li>If SmartScreen says it protected your PC, choose <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+  <li>Follow the installer. It picks the x64 or Arm build for you.</li>
+</ol>
+
+<div class="note">
+  <p>Command Center starts with your computer and keeps running in the menu bar (Mac) or the notification area (Windows), so your briefs arrive with the window closed. Quit it from that icon's menu. You can turn <strong>Launch at login</strong> off in Settings › Touchpoints.</p>
+</div>
+
+<h2 id="setup">The set-up</h2>
+<p>The first time it opens, Command Center shows <strong>Set up</strong> instead of its usual screens: the steps on the left with how many are done, and one step at a time on the right, with <strong>Back</strong>, <strong>Skip for now</strong> and <strong>Next</strong> at the bottom.</p>
+{{shot:setup-workspace|The set-up's first step, Your workspace, with the list of steps down the left.|The set-up: one step at a time, each made of the same cards Settings shows.}}
+<p>Your workspace comes first. Every step after it can be skipped and done later, here or in Settings. Settings › Your workspace shows how far you got and has <strong>Open the set-up</strong>.</p>
+<p>Rather look around first? <strong>Look around the demo first</strong> opens a sample business you can click through. It never sends anything, and its sidebar has <strong>Set up your workspace</strong> to bring you back.</p>
+
+<h3 id="workspace">1. Your workspace</h3>
+<p>Type your name and choose <strong>Start your workspace</strong>. This is where your real mail and work go, on your computer's own clock. Moving from another computer? Use <strong>Restore from a backup</strong> instead (see <a href="data.html#new-computer">A new computer</a>).</p>
+
+<h3 id="claude">2. Claude</h3>
+<p>Choose how Claude is paid for: your <strong>API key</strong> (pay as you go) or your <strong>Claude plan</strong> (through Claude Code). Then set the <strong>Monthly cap</strong>, $50 to start. Details are in <a href="claude.html">Claude, guardrails and costs</a>.</p>
+
+<h3 id="email">3. Email and Slack</h3>
+<p>Command Center reads your work Gmail and your Slack on this computer, and sends only the replies you approve. Each uses an app you make yourself, for free: Gmail takes about 10 minutes, Slack about 5. The steps are in the app, and in <a href="inbox.html#gmail">Inbox: Gmail and Slack</a>.</p>
+{{shot:setup-email|The Email and Slack step, with Gmail's and Slack's set-up cards.}}
+
+<h3 id="sorting">4. Sorting</h3>
+<p>Two switches: <strong>Claude sorts new mail</strong> and <strong>Claude drafts replies</strong>. Each asks first and tells you the most one call can cost. With both off, free rules still file the obvious.</p>
+
+<h3 id="books">5. Books</h3>
+<p>Connect QuickBooks (with your own Intuit app) and Stripe (a read-only restricted key). Invoices and reminders go out only on your click; moving money is always yours. See <a href="money.html#connect">Money and the books</a>.</p>
+
+<h3 id="notion">6. Notion</h3>
+<p>If your clients and projects live in Notion, bring them in with a read-only connection, then retire Notion. See <a href="notion.html">Bringing in Notion</a>.</p>
+
+<h3 id="sites">7. Your sites</h3>
+<p>For the site agent, add each website's GitHub repository with a fine-grained token for it. See <a href="agents.html#sites">Site agents</a>.</p>
+
+<h3 id="backups">8. Backups</h3>
+<p>Type a passphrase of at least 12 characters (four or more words) twice, keep it in your password manager, and choose <strong>Choose a folder and back up</strong>. iCloud Drive, OneDrive or a USB drive keeps your backups off this computer. See <a href="data.html#backups">Backups</a>.</p>
+
+<h3 id="your-inbox">Your inbox</h3>
+<p>The last page shows your mail as its first sync and sort leave it: how many messages were read, how many were filed for you, how many need you, and anything you skipped, each with <strong>Set up</strong>. Choose <strong>Open your inbox</strong>, and you're done.</p>
+{{shot:setup-inbox|The set-up's last page: messages read, filed for you, needing you, and what's left to set up.}}
+
+<div class="note note--good">
+  <p><strong>Next:</strong> read <a href="today.html">Today and the agenda</a>, the two screens you'll use most.</p>
+</div>

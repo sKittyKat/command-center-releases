@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude, guardrails and costs · Command Center</title>
+<meta name="description" content="Pay for Claude with your API key or your Claude plan, set a monthly cap, choose what Claude may do on its own with guardrails, set a spend limit, and see what everything costs.">
+<meta property="og:title" content="Claude, guardrails and costs · Command Center">
+<meta property="og:description" content="Pay for Claude with your API key or your Claude plan, set a monthly cap, choose what Claude may do on its own with guardrails, set a spend limit, and see what everything costs.">
+<meta property="og:image" content="assets/screens/today.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/icon.png" type="image/png">
+<link rel="preload" href="assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="top">
+  <a class="brand" href="./"><img src="assets/icon.png" alt="" width="28" height="28">Command Center</a>
+  <nav aria-label="Site">
+    <a href="get-started.html" aria-current="page">Docs</a>
+    <a class="hide-narrow" href="help.html">Help</a>
+    <a href="https://github.com/sKittyKat/command-center-releases/releases">Releases</a>
+  </nav>
+</header>
+<div class="docs"><aside class="sidebar" aria-label="Docs"><details open><summary>All docs</summary><nav><h2>Start</h2><ul><li><a href="get-started.html">Install and set up</a></li></ul><h2>Every day</h2><ul><li><a href="today.html">Today and the agenda</a></li><li><a href="touchpoints.html">Touchpoints and alerts</a></li><li><a href="inbox.html">Inbox: Gmail and Slack</a></li><li><a href="projects.html">Projects and clients</a></li><li><a href="agents.html">Site agents</a></li><li><a href="money.html">Money and the books</a></li><li><a href="accounts.html">Accounts and cards</a></li></ul><h2>Your settings</h2><ul><li><a href="claude.html" aria-current="page">Claude, guardrails and costs</a></li><li><a href="notion.html">Bringing in Notion</a></li><li><a href="data.html">Your data, backups and updates</a></li></ul><h2>Help</h2><ul><li><a href="help.html">Troubleshooting</a></li><li><a href="releases.html">Release notes</a></li></ul></nav></details></aside><main id="main" class="content"><h1>Claude, guardrails and costs</h1>
+<p class="lead">Claude does the reading, sorting and drafting. You decide how it's paid for, how much it may spend, and what it may do without asking.</p>
+
+<h2 id="paying">How Claude is paid for</h2>
+<p>In Settings › Claude, choose one:</p>
+<h3>Your API key</h3>
+<p>Pay as you go, billed by Anthropic. Make a key at <a href="https://platform.claude.com">platform.claude.com</a> and paste it in. Command Center checks it with Anthropic (free), then keeps it in your system's keychain. It never shows the key again.</p>
+<h3>Your Claude plan</h3>
+<p>Uses your Claude subscription through Claude Code. Choose <strong>Check</strong>:</p>
+<ul>
+  <li>Command Center looks everywhere Claude Code gets installed, on a Mac and on Windows: its own installer's folder, Homebrew, WinGet, Scoop, npm, every folder on your PATH, and the copy inside the Claude desktop app.</li>
+  <li>If it finds none, install Claude Code from <a href="https://claude.ai/install">claude.ai/install</a>.</li>
+  <li>If it isn't signed in yet, <strong>Check</strong> tells you exactly what to type in a terminal. Sign in there once with your Claude account, then choose <strong>Check</strong> again.</li>
+</ul>
+<p>It shares your plan's limits with your own Claude Code use. Command Center never reads or keeps Claude Code's sign-in; it only runs it, with every tool off.</p>
+<figure><div class="shot"><img src="assets/screens/settings-claude-plan.png" width="1100" height="700" alt="Settings, Claude: paid for with the Claude plan, Claude Code signed in, and this month's use against the cap." loading="lazy" decoding="async"></div></figure>
+
+<h2 id="cap">The monthly cap</h2>
+<p>The most Claude may use in a month, $50 to start. Settings shows this month's use by job, the calls and what caching saved. At the cap Claude pauses until the 1st, and nothing else stops: the free rules keep sorting and the touchpoints keep landing. Lowering the cap is instant; raising it asks you to confirm. Each call reserves its worst case before it runs, so the cap can't be overshot.</p>
+
+<h2 id="jobs">What Claude does</h2>
+<div class="table"><table>
+  <thead><tr><th>Job</th><th>Model</th><th>Only while</th></tr></thead>
+  <tbody>
+    <tr><td>Sorting new mail</td><td>Haiku</td><td><strong>Claude sorts new mail</strong> is on</td></tr>
+    <tr><td>Drafting replies</td><td>Opus</td><td><strong>Claude drafts replies</strong> is on</td></tr>
+    <tr><td>Writing the briefs</td><td>Opus</td><td><strong>Claude writes the briefs</strong> is on</td></tr>
+    <tr><td>Suggesting categories</td><td>Haiku</td><td><strong>Claude suggests categories</strong> is on</td></tr>
+    <tr><td>QA grading of site agents' work</td><td>Opus</td><td>A run reaches QA</td></tr>
+  </tbody>
+</table></div>
+<p>Claude only ever proposes. It never gets a tool that sends, pays or signs, never picks a recipient or an amount (those come from your data), and its words go out only through a card you approve.</p>
+
+<h2 id="guardrails">Guardrails</h2>
+<p>For each kind of work, Settings › Claude › Guardrails sets whether it may happen on its own (<strong>Auto</strong>), must ask you (<strong>Approve</strong>), or is only prepared for you to do (<strong>Only you</strong>).</p>
+<ul>
+  <li>Making a step stricter takes one click. Making it looser asks you to confirm.</li>
+  <li>Anything that sends, publishes or speaks for you (client messages, invoices, deploying a site) is always at least <strong>Approve</strong>.</li>
+  <li>Four things are always yours: entering card or bank details, moving money, signing contracts and setting pricing. Claude can prepare them as a card with a checklist; it never does them.</li>
+</ul>
+<figure><div class="shot"><img src="assets/screens/settings-tab-rules.png" width="1100" height="700" alt="Settings, Claude tab: each kind of work set to Auto, Approve or Only you, and the always-yours rows locked." loading="lazy" decoding="async"></div></figure>
+
+<h3 id="spend">The spend limit</h3>
+<p>Separate from Claude's cap: the most Command Center may commit of your money to others on its own. It starts at $0, so anything that costs money waits for your click.</p>
+
+<h3 id="log">The action log</h3>
+<p>Everything Claude, the engine and you did lands in the action log, with its source and <strong>Undo</strong> where it can have one. See <a href="today.html#log">The action log</a>.</p>
+
+<h2 id="costs">What it costs</h2>
+<ul>
+  <li><strong>Command Center:</strong> free.</li>
+  <li><strong>Claude:</strong> paid by your API key or your plan, only for what you turn on, under your monthly cap. As a rough guide, a busy inbox of about 200 messages and 20 replies a day costs about $1 to $1.50 a day, most of it drafts. The free rules file a good share before Claude sees anything.</li>
+  <li><strong>Site agents:</strong> each run has a budget you set ($5 to start), held against Claude's cap. A run only starts when you confirm its brief and its cost.</li>
+  <li><strong>Everything else is free:</strong> Google Cloud, the Slack app, Intuit's developer app, Stripe's restricted key, Notion's connection, GitHub tokens and ntfy.</li>
+</ul>
+<nav class="pager" aria-label="More docs"><a href="accounts.html"><span>Before</span><strong>Accounts and cards</strong></a><a class="next" href="notion.html"><span>Next</span><strong>Bringing in Notion</strong></a></nav></main></div>
+<footer class="foot">
+  <div class="wrap">
+    <span>Command Center · free · local-first. Your data stays on your computer.</span>
+    <span><a href="get-started.html">Docs</a> · <a href="data.html#privacy">Privacy</a> · <a href="https://github.com/sKittyKat/command-center-releases/releases">Releases</a></span>
+  </div>
+</footer>
+</body>
+</html>

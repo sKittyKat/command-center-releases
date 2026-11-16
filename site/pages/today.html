@@ -1,0 +1,60 @@
+<!-- {"title": "Today and the agenda", "description": "Today shows what's to do and what Claude handled; the agenda groups what needs you into Approve, Review, Reply and Decide, with keys, snooze, pin, delegate, the command bar and the action log."} -->
+<h1>Today and the agenda</h1>
+<p class="lead">Today tells you how your day stands at a glance. The agenda is where you clear what needs you, by mouse or keyboard.</p>
+
+<h2 id="today">Today</h2>
+{{shot:today|Today: 12 to do, 31 handled overnight, the midday sweep at 1:00 PM, a timeline of the day, and charts of time to clear and actions per hour.}}
+<p>Across the top: how many things are <strong>to do</strong> and about how long they'll take, what Claude <strong>handled overnight</strong> (undo any of them from the log), and when the <strong>next touchpoint</strong> is. Its mark breathes slowly while you wait.</p>
+<p>Below it, the day's timeline from 7 AM to 7 PM with the brief, sweep and wrap marked, <strong>Time to clear</strong> by kind, <strong>Handled by Claude</strong> hour by hour, <strong>Needs you first</strong>, and the newest brief. When nothing's left, Today shows <strong>All clear</strong>.</p>
+
+<h2 id="agenda">The agenda</h2>
+<p>Everything that needs you, in four groups, in the order that matters: what's due soonest and what's at stake come first. Each item says why it's where it is.</p>
+<div class="table"><table>
+  <thead><tr><th>Group</th><th>What's in it</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Approve</strong></td><td>A reply, invoice or other action Claude prepared. It runs only on your click.</td></tr>
+    <tr><td><strong>Review</strong></td><td>Work a site agent finished and QA checked.</td></tr>
+    <tr><td><strong>Reply</strong></td><td>A message that needs your answer, often with Claude's draft.</td></tr>
+    <tr><td><strong>Decide</strong></td><td>Something only you can choose: a slipping milestone, a bill, a flagged charge, a card running out.</td></tr>
+  </tbody>
+</table></div>
+<p>The filters along the top also show what's <strong>Waiting</strong> on someone else and what you've <strong>Snoozed</strong>.</p>
+{{shot:agenda-item|The agenda with a Reply item open: who asked, when it's due, and Claude's recommendation to offer a change request.}}
+
+<h3 id="item">An item</h3>
+<p>Open an item to see who it's for, when it's due and where it came from, why it's first, Claude's recommendation (or the engine's, for a slip or a status), and exactly what would go out. Its main button does the one thing it's for: <strong>Approve and send</strong>, <strong>Accept and merge</strong>, <strong>Move to Nov 24</strong>, <strong>Mark paid</strong>.</p>
+<ul>
+  <li><strong>Edit</strong> changes the draft before it goes. What you see is what's sent.</li>
+  <li><strong>Snooze</strong> puts it away until a touchpoint or a day you pick.</li>
+  <li><strong>Pin</strong> keeps it at the top of its group; <strong>Push down</strong> sends it lower.</li>
+  <li><strong>Delegate</strong> hands work to an agent.</li>
+  <li><strong>Take back</strong> returns something you delegated or marked waiting.</li>
+</ul>
+{{shot:agenda-edit-draft|Editing a reply's draft in the agenda before approving it.|Edit shows exactly what would go out, and you can change it before you approve.}}
+{{shot:agenda-snooze-menu|The snooze menu: until the midday sweep, the end-of-day wrap, tomorrow's brief or another day.}}
+
+<h3 id="keys">Keys</h3>
+<div class="table"><table>
+  <thead><tr><th>Key</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td><kbd>⌘</kbd> <kbd>Enter</kbd> on a Mac, <kbd>Ctrl</kbd> <kbd>Enter</kbd> on Windows</td><td>The main button</td></tr>
+    <tr><td><kbd>E</kbd></td><td>Edit</td></tr>
+    <tr><td><kbd>D</kbd></td><td>Delegate</td></tr>
+    <tr><td><kbd>S</kbd></td><td>Snooze</td></tr>
+    <tr><td><kbd>P</kbd></td><td>Pin</td></tr>
+    <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Move between items</td></tr>
+    <tr><td><kbd>Esc</kbd></td><td>Close</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="command-bar">The command bar</h2>
+<p><kbd>⌘</kbd> <kbd>K</kbd> on a Mac, <kbd>Ctrl</kbd> <kbd>K</kbd> on Windows. Type to find any client, project, item or setting. With nothing typed it lists what's to do and quick actions: snooze, pin, take back, undo, pause the touchpoints, sync now. It never approves or sends: an item opens, so your click lands on its card.</p>
+{{shot:command-bar|The command bar open over Today, listing things to do and quick actions.}}
+
+<h2 id="week">The week</h2>
+<p>The Week view shows each weekday's done, planned and due, your priorities, and your capacity: hours booked against the week. On Monday morning the engine suggests three priorities from what's at risk and due; <strong>Edit</strong> changes them and your booked hours. On Friday afternoon the review sums up revenue, receivables, project health and agents' first-time QA passes.</p>
+{{shot:week|The Week: five days with what's done and planned, three priorities, capacity in hours, and Friday's review.}}
+
+<h2 id="log">The action log</h2>
+<p>Everything Claude, the engine and you did, by day, with who did it and why. Filter by client or by who acted, page back through days, and choose <strong>Undo</strong> where a change can be undone. A line opens what it was about.</p>
+{{shot:log|The action log: today's changes with their source and Undo buttons.}}

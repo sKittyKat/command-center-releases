@@ -1,0 +1,43 @@
+<!-- {"title": "Your data, backups and updates", "description": "Where your data lives, what leaves your computer, nightly sealed backups, restoring on a new computer, the two workspaces, and how updates work."} -->
+<h1>Your data, backups and updates</h1>
+<p class="lead">Command Center is local-first: your workspace lives on your computer, it works offline, and only the features you switch on reach out, for what they need.</p>
+
+<h2 id="privacy">Your data and privacy</h2>
+<ul>
+  <li><strong>Where it lives.</strong> Everything stays on your computer, in <code>~/Library/Application Support/Command Center</code> on a Mac and <code>%APPDATA%\Command Center</code> on Windows. Uninstalling leaves it there.</li>
+  <li><strong>Keys and tokens.</strong> Sign-in tokens and keys live only in the system's keychain: the Keychain on a Mac, or protected by Windows for your account. Never in plain files, the database, logs or the screens.</li>
+  <li><strong>Mail is data.</strong> Emails, messages, pages and files are treated as data, never as instructions: a message that tries to tell Claude what to do changes nothing.</li>
+  <li><strong>Replies.</strong> A reply goes only where the message came from, to its sender and thread, and only on your click.</li>
+  <li><strong>What reaches Claude.</strong> Your mail reaches Claude only while its switches are on, and only what the free rules didn't file.</li>
+  <li><strong>What leaves the computer.</strong> Only the calls a feature you switched on needs. Nothing is loaded from the network when the app opens; only the features that need a connection wait for one.</li>
+  <li><strong>No account, no tracking.</strong> There's no Command Center account and no analytics.</li>
+</ul>
+
+<h2 id="workspaces">Two workspaces</h2>
+<p><strong>The demo</strong> is a sample business with its morning pinned, for clicking through. It never syncs or sends. <strong>Your workspace</strong> holds your real mail and work, on your computer's own clock. Switch between them in Settings › Your workspace.</p>
+{{shot:settings-tab-yours|Settings, Your workspace tab: the workspace you're in, the set-up's progress, and backups.}}
+
+<h2 id="backups">Backups</h2>
+<p>Each night after the 6:00 PM wrap, your workspace and its files are sealed with your passphrase (AES-256) and copied to a folder you choose. iCloud Drive, OneDrive or a USB drive keeps them off this computer.</p>
+<ol class="steps">
+  <li>In Settings › Your workspace › Backup (or the set-up's last step), type a passphrase of at least 12 characters, four or more words, twice. Keep it in your password manager: <strong>without it no backup can be opened.</strong></li>
+  <li>Choose <strong>Choose a folder and back up</strong>.</li>
+</ol>
+<p>The Backup card also has <strong>Back up now</strong>, <strong>Show the folder</strong>, <strong>Choose another folder</strong>, how many to keep (7, 14 or 30; 14 to start) and <strong>Turn backups off</strong> (which forgets the key on this computer and leaves the backups in the folder). A backup that couldn't be made, say a drive unplugged or a full disk, is shown there and tried again within the hour. Only what Command Center made in that folder is ever pruned. Keys and sign-ins are never in a backup.</p>
+
+<h2 id="new-computer">A new computer</h2>
+<ol class="steps">
+  <li>Install Command Center and open it. The set-up starts.</li>
+  <li>In <strong>Your workspace</strong>, choose <strong>Restore from a backup</strong> and pick the folder holding "Command Center Backups".</li>
+  <li>Pick a backup, type your passphrase, and confirm. Your workspace, its files and your settings come back.</li>
+  <li>Sign-ins don't travel between computers. Command Center names the ones to make again (for example "Sign in again on this computer: Gmail, Slack"), and the set-up's steps show them as to do.</li>
+</ol>
+<p>A restore on the same computer backs up your current workspace first, so it can be undone the same way. Every part of a backup is checked before anything is replaced.</p>
+
+<h2 id="updates">Updates</h2>
+<p>Once a day, with the first brief, Command Center asks GitHub which version is newest (one request, no account, nothing about you).</p>
+<ol class="steps">
+  <li>When a newer one is out, Settings › Touchpoints › Updates and the tray say so, with <strong>Download</strong>.</li>
+  <li>Download the new installer and run it over the old app. Your data stays.</li>
+</ol>
+<p>Nothing downloads or installs by itself. <strong>Check now</strong> asks straight away, and you can turn <strong>Check for updates</strong> off. All versions are on the <a href="https://github.com/sKittyKat/command-center-releases/releases">releases page</a>, with their checksums; see <a href="releases.html">Release notes</a>.</p>

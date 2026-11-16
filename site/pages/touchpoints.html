@@ -1,0 +1,40 @@
+<!-- {"title": "Touchpoints and alerts", "description": "The morning brief, midday sweep and end-of-day wrap, the Monday plan and Friday review, notifications, phone alerts through ntfy, the audio brief, the tray and launch at login."} -->
+<h1>Touchpoints and alerts</h1>
+<p class="lead">Command Center reaches you at set times, not all day. Between them, only what truly can't wait gets through, and only if you turn that on.</p>
+
+<h2 id="touchpoints">The touchpoints</h2>
+<div class="table"><table>
+  <thead><tr><th>When</th><th>What</th></tr></thead>
+  <tbody>
+    <tr><td>7:30 AM</td><td><strong>Morning brief</strong>: what came in overnight, what Claude handled, what needs you first.</td></tr>
+    <tr><td>1:00 PM</td><td><strong>Midday sweep</strong>: what's new and what's due before the end of the day.</td></tr>
+    <tr><td>6:00 PM</td><td><strong>End-of-day wrap</strong>: what got done, what's waiting, what tomorrow starts with.</td></tr>
+    <tr><td>Monday 8:00 AM</td><td><strong>The plan for the week</strong>: three suggested priorities, on the Week.</td></tr>
+    <tr><td>Friday 4:00 PM</td><td><strong>The review</strong>: the week's revenue, receivables, project health and agents' work.</td></tr>
+  </tbody>
+</table></div>
+<p>Each comes as a notification that opens Today (or the Week). Move any of them to another quarter hour in Settings › Touchpoints; the three daily ones stay in order, at least an hour apart. They follow your computer's time zone, or one you keep with <strong>Follow my time zone</strong> off.</p>
+<p>If the computer was asleep, the latest brief lands when it wakes; an earlier day's is let go. <strong>Pause</strong> holds them until tomorrow's first, from Settings, the tray or the command bar.</p>
+{{shot:settings-tab-reach|Settings, Touchpoints tab: the times of the brief, sweep and wrap, their switches, phone alerts and updates.}}
+
+<h3 id="briefs">The briefs</h3>
+<p>Briefs are plain and free by default: the engine's own counts and words. Turn on <strong>Claude writes the briefs</strong> and Claude writes them instead, at one call per brief, under your cap. The newest brief shows on Today.</p>
+
+<h2 id="tray">The tray and launch at login</h2>
+<p>Closing the window leaves Command Center running in the menu bar (Mac) or the notification area (Windows), so the touchpoints still land; it says so the first time. The icon's menu shows the newest brief and the next touchpoint, plays the brief aloud, pauses the touchpoints, and quits. On Windows, a click on the icon opens the window.</p>
+<p><strong>Launch at login</strong> starts it quietly into the tray when you sign in to your computer.</p>
+
+<h2 id="phone">Phone alerts</h2>
+<p>What can't wait for the next touchpoint (due within 4 hours, or overdue) reaches your phone within a minute through <a href="https://ntfy.sh">ntfy</a>, a free push app.</p>
+<ol class="steps">
+  <li>In Settings › Touchpoints › Phone alerts, Command Center makes a long random topic. It's kept in your keychain, like a password.</li>
+  <li>Install ntfy on your phone and subscribe to that topic (or use your own ntfy server).</li>
+  <li>Choose <strong>Send a test</strong>, then turn phone alerts on. It tells you exactly what will leave the computer and where.</li>
+</ol>
+<p>Quiet hours are 9 PM to 7 AM, with at most 10 alerts a day; you can change both. Each alert goes once. Alerts name the item and its client only if you turn on <strong>Say what each item is</strong>; they never carry a message's text or a link.</p>
+
+<h2 id="audio">The morning brief, read aloud</h2>
+<p>Turn on <strong>Morning brief as audio</strong> and your computer's own voice reads the 7:30 AM brief as it lands. Any brief also plays from the tray's menu or Today's brief card, with <strong>Stop</strong> while it reads. Nothing leaves the computer: it's the system's own speech, not a cloud voice.</p>
+
+<h2 id="notifications">If notifications don't show</h2>
+<p>On a Mac, allow them in System Settings › Notifications › Command Center. Settings › Touchpoints says when the system didn't show the last one. Your briefs still land on Today and in the tray either way.</p>

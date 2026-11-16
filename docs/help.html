@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Troubleshooting · Command Center</title>
+<meta name="description" content="What to do when the Mac won't open the app, notifications don't show, Claude Code isn't found, Google won't allow Internal, Slack lacks channel scopes, Claude stops sorting, or a restore asks for a passphrase.">
+<meta property="og:title" content="Troubleshooting · Command Center">
+<meta property="og:description" content="What to do when the Mac won't open the app, notifications don't show, Claude Code isn't found, Google won't allow Internal, Slack lacks channel scopes, Claude stops sorting, or a restore asks for a passphrase.">
+<meta property="og:image" content="assets/screens/today.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/icon.png" type="image/png">
+<link rel="preload" href="assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="top">
+  <a class="brand" href="./"><img src="assets/icon.png" alt="" width="28" height="28">Command Center</a>
+  <nav aria-label="Site">
+    <a href="get-started.html" aria-current="page">Docs</a>
+    <a class="hide-narrow" href="help.html">Help</a>
+    <a href="https://github.com/sKittyKat/command-center-releases/releases">Releases</a>
+  </nav>
+</header>
+<div class="docs"><aside class="sidebar" aria-label="Docs"><details open><summary>All docs</summary><nav><h2>Start</h2><ul><li><a href="get-started.html">Install and set up</a></li></ul><h2>Every day</h2><ul><li><a href="today.html">Today and the agenda</a></li><li><a href="touchpoints.html">Touchpoints and alerts</a></li><li><a href="inbox.html">Inbox: Gmail and Slack</a></li><li><a href="projects.html">Projects and clients</a></li><li><a href="agents.html">Site agents</a></li><li><a href="money.html">Money and the books</a></li><li><a href="accounts.html">Accounts and cards</a></li></ul><h2>Your settings</h2><ul><li><a href="claude.html">Claude, guardrails and costs</a></li><li><a href="notion.html">Bringing in Notion</a></li><li><a href="data.html">Your data, backups and updates</a></li></ul><h2>Help</h2><ul><li><a href="help.html" aria-current="page">Troubleshooting</a></li><li><a href="releases.html">Release notes</a></li></ul></nav></details></aside><main id="main" class="content"><h1>Troubleshooting</h1>
+<p class="lead">The common snags, and what to do about each. Everything Claude and you did is in the action log, with <strong>Undo</strong> where it can have one, and uninstalling never touches your data.</p>
+
+<h2 id="mac-wont-open">The Mac won't open the app</h2>
+<p>The app isn't signed yet, so macOS asks once. Open System Settings › Privacy &amp; Security, scroll to Command Center and choose <strong>Open Anyway</strong>. On macOS 14 or earlier, right-click the app and choose <strong>Open</strong>.</p>
+
+<h2 id="smartscreen">Windows says it protected your PC</h2>
+<p>In the SmartScreen notice, choose <strong>More info</strong>, then <strong>Run anyway</strong>. It's the same unsigned-app check, once.</p>
+
+<h2 id="notifications">No notifications on the Mac</h2>
+<p>Allow them in System Settings › Notifications › Command Center. Settings › Touchpoints says when the system didn't show the last one. Your briefs still land on Today and in the menu bar.</p>
+
+<h2 id="claude-code">Command Center can't find Claude Code</h2>
+<p>With Claude paid by your plan, <strong>Check</strong> looks everywhere Claude Code gets installed, including the copy inside the Claude desktop app. If it still finds none, install Claude Code from <a href="https://claude.ai/install">claude.ai/install</a>, then choose <strong>Check</strong> again. You don't need to restart Command Center.</p>
+
+<h2 id="claude-code-signed-out">Claude Code isn't signed in</h2>
+<p><strong>Check</strong> says exactly what to type in a terminal: <code>claude</code>, or the full path of the copy it found (for the desktop app's copy). Run it, sign in with your Claude account (the one with your plan), then choose <strong>Check</strong> again. If it's signed in with something other than a Claude plan, its use is billed to that sign-in, and Settings says so.</p>
+
+<h2 id="google-internal">Google won't let me choose Internal</h2>
+<p><strong>Internal</strong> is for Google Workspace accounts. With a personal Gmail, choose <strong>External</strong>, keep it in testing, and add yourself as a test user. Google then asks you to sign in again every 7 days.</p>
+
+<h2 id="slack-scopes">Slack says it's missing scopes for channels</h2>
+<p>Add <code>channels:read</code>, <code>channels:history</code>, <code>groups:read</code> and <code>groups:history</code>, and the events <code>message.channels</code> and <code>message.groups</code>. Then <strong>Reinstall to Workspace</strong>. If Slack shows a new User OAuth Token, disconnect Slack in Command Center and connect again with it.</p>
+
+<h2 id="claude-stopped">Claude stopped sorting</h2>
+<p>Settings › Sources › Inbox says why: the monthly cap reached, no credit left on your Anthropic account, or a key this computer can't open (save it again on the Claude card, in Settings › Claude). The free rules keep filing in the meantime.</p>
+
+<h2 id="quickbooks">QuickBooks sign-in didn't finish</h2>
+<p>Paste back the whole address your browser lands on after you pick your company, within 15 minutes. It works once: if it timed out, choose <strong>Sign in to QuickBooks</strong> again.</p>
+
+<h2 id="stripe">Stripe refused my key</h2>
+<p>Command Center only accepts a <strong>restricted key</strong> with read access to the balance, payments and payouts. A full secret key (<code>sk_…</code>) is refused on purpose.</p>
+
+<h2 id="restore-passphrase">A restore asks for a passphrase</h2>
+<p>The backup was sealed with a key this computer doesn't hold. Type the passphrase you set backups up with.</p>
+
+<h2 id="phone-alerts">No phone alerts</h2>
+<p>Check that your phone's ntfy app is subscribed to the exact topic Settings shows, then choose <strong>Send a test</strong>. Alerts don't go during quiet hours (9 PM to 7 AM to start), while the touchpoints are paused, or past the daily limit.</p>
+
+<h2 id="else">Something else</h2>
+<p>The action log has every change, with <strong>Undo</strong> where it can have one. Your data folder is never touched by uninstalling, so a reinstall picks up where you left off.</p>
+<nav class="pager" aria-label="More docs"><a href="data.html"><span>Before</span><strong>Your data, backups and updates</strong></a><a class="next" href="releases.html"><span>Next</span><strong>Release notes</strong></a></nav></main></div>
+<footer class="foot">
+  <div class="wrap">
+    <span>Command Center · free · local-first. Your data stays on your computer.</span>
+    <span><a href="get-started.html">Docs</a> · <a href="data.html#privacy">Privacy</a> · <a href="https://github.com/sKittyKat/command-center-releases/releases">Releases</a></span>
+  </div>
+</footer>
+</body>
+</html>

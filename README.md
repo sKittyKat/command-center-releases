@@ -6,7 +6,10 @@ Claude handles the busywork across your email, Slack, projects, clients, agents 
 you: things to **Approve**, **Review**, **Reply** to and **Decide**. It comes in three short touchpoints a day, at
 7:30 AM, 1:00 PM and 6:00 PM. Your data stays on your computer. Nothing is sent, paid or published without your click.
 
-This repository holds only the installers and the guide. The code isn't kept here.
+**[The website and docs](https://skittykat.github.io/command-center-releases/)** explain every part of the app.
+
+This repository holds only the installers, the guide and the website (`docs/`, built from `site/` with
+`node site/build.mjs`). The app's code isn't kept here.
 
 ## Download
 

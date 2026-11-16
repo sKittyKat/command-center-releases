@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Money and the books · Command Center</title>
+<meta name="description" content="QuickBooks and Stripe read in, categories from your past, invoices drafted from milestones, payment reminders, the Friday reconcile, flags for odd charges, and your personal statements.">
+<meta property="og:title" content="Money and the books · Command Center">
+<meta property="og:description" content="QuickBooks and Stripe read in, categories from your past, invoices drafted from milestones, payment reminders, the Friday reconcile, flags for odd charges, and your personal statements.">
+<meta property="og:image" content="assets/screens/today.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/icon.png" type="image/png">
+<link rel="preload" href="assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="top">
+  <a class="brand" href="./"><img src="assets/icon.png" alt="" width="28" height="28">Command Center</a>
+  <nav aria-label="Site">
+    <a href="get-started.html" aria-current="page">Docs</a>
+    <a class="hide-narrow" href="help.html">Help</a>
+    <a href="https://github.com/sKittyKat/command-center-releases/releases">Releases</a>
+  </nav>
+</header>
+<div class="docs"><aside class="sidebar" aria-label="Docs"><details open><summary>All docs</summary><nav><h2>Start</h2><ul><li><a href="get-started.html">Install and set up</a></li></ul><h2>Every day</h2><ul><li><a href="today.html">Today and the agenda</a></li><li><a href="touchpoints.html">Touchpoints and alerts</a></li><li><a href="inbox.html">Inbox: Gmail and Slack</a></li><li><a href="projects.html">Projects and clients</a></li><li><a href="agents.html">Site agents</a></li><li><a href="money.html" aria-current="page">Money and the books</a></li><li><a href="accounts.html">Accounts and cards</a></li></ul><h2>Your settings</h2><ul><li><a href="claude.html">Claude, guardrails and costs</a></li><li><a href="notion.html">Bringing in Notion</a></li><li><a href="data.html">Your data, backups and updates</a></li></ul><h2>Help</h2><ul><li><a href="help.html">Troubleshooting</a></li><li><a href="releases.html">Release notes</a></li></ul></nav></details></aside><main id="main" class="content"><h1>Money and the books</h1>
+<p class="lead">Your books, kept up to date and checked. Command Center reads QuickBooks and Stripe, prepares invoices and reminders for your click, and flags what looks wrong. Moving money is always yours.</p>
+<figure><div class="shot"><img src="assets/screens/money.png" width="1100" height="700" alt="Money: cash, invoices and their next steps, transactions to categorize, and flags." loading="lazy" decoding="async"></div></figure>
+
+<h2 id="connect">Connect your books</h2>
+<h3>QuickBooks Online</h3>
+<p>With your own Intuit app and its production keys:</p>
+<ol class="steps">
+  <li>At <a href="https://developer.intuit.com">developer.intuit.com</a>, create an app called Command Center for QuickBooks Online, with the accounting scope.</li>
+  <li>Keys and credentials › Production: add an <code>https</code> address of yours as a redirect URI. It needn't show anything; you'll copy the address your browser lands on.</li>
+  <li>Paste the production client ID, secret and that address into Command Center and choose <strong>Save app</strong>.</li>
+  <li>Choose <strong>Sign in to QuickBooks</strong>, pick your company in your browser, and paste back the address the browser lands on (within 15 minutes).</li>
+</ol>
+<h3>Stripe</h3>
+<p>Make a <strong>restricted key</strong> with read access to the balance, payments and payouts only, and paste it in. A full secret key is refused: Command Center only ever reads Stripe.</p>
+<p>The books sync before each touchpoint's brief, when you choose <strong>Sync now</strong>, and when you sign in. They run in your own workspace only; the demo's books are a sample.</p>
+
+<h2 id="categories">Categories</h2>
+<p>New transactions are filed by rules learned from your own past categorizing, for free. For a new payee, Claude can suggest a category if you turn on <strong>Claude suggests categories</strong>; a suggestion always waits for your click. Entries in your own QuickBooks follow your <strong>Categorize transactions</strong> and <strong>Record payments in the books</strong> guardrails.</p>
+
+<h2 id="invoices">Invoices and reminders</h2>
+<ul>
+  <li><strong>From milestones.</strong> When a milestone with a fee is done, an invoice draft reaches Approve, one per milestone (and one per period for monthly or yearly contracts).</li>
+  <li><strong>Sent on your click.</strong> The amount, customer and billing address come from QuickBooks, never from Claude's words. It goes only to the billing address QuickBooks keeps.</li>
+  <li><strong>Reminders.</strong> An overdue invoice gets a reminder for your approval, once per invoice and turn.</li>
+  <li><strong>Payments.</strong> Stripe payments and payouts are matched and recorded in QuickBooks; an inexact match waits for you.</li>
+</ul>
+
+<h2 id="reconcile">The Friday reconcile</h2>
+<p>Each Friday, Command Center compares your books with Stripe's money and your invoices. Anything that doesn't add up reaches Decide as one card listing the gaps.</p>
+
+<h2 id="flags">Flags</h2>
+<p>Rules (no Claude, no cost) look at what happened since you connected and flag:</p>
+<ul>
+  <li>a charge that appears twice;</li>
+  <li>an invoice paid twice, or overpaid;</li>
+  <li>an unusual charge for that payee.</li>
+</ul>
+<p>Each reaches Decide once and leaves when the books settle it. Disputes and refunds are yours to make.</p>
+<figure><div class="shot"><img src="assets/screens/money-flags-yours.png" width="1100" height="700" alt="Money's Flags card: a charge that appeared twice and an unusual one, each linked to its card on the agenda." loading="lazy" decoding="async"></div></figure>
+
+<h2 id="personal">Personal money</h2>
+<p>Money › Personal keeps your own bank and card statements apart from the business books. There's no bank sign-in and no aggregator: you import statements as files.</p>
+<ul>
+  <li><strong>Import</strong> OFX, QFX or CSV files, or choose a folder you save statements in; it's read at each touchpoint. Each file is read once.</li>
+  <li><strong>Bills</strong> and <strong>subscriptions</strong> are worked out from what recurs. A bill's card reaches Decide 3 days before it's due, with <strong>Mark paid</strong>; a later statement takes it off.</li>
+  <li><strong>Flags</strong> for a new subscription, a price rise, a yearly renewal 7 days ahead, and charges that appear twice or look unusual.</li>
+  <li>Only an account's last four digits are kept, never a full number.</li>
+</ul>
+<figure><div class="shot"><img src="assets/screens/money-personal-yours.png" width="1100" height="700" alt="Money, Personal: cash flow, bills ahead, subscriptions and the statements imported." loading="lazy" decoding="async"></div></figure>
+<p>Paying, cancelling and disputing stay yours: Command Center never moves money.</p>
+<nav class="pager" aria-label="More docs"><a href="agents.html"><span>Before</span><strong>Site agents</strong></a><a class="next" href="accounts.html"><span>Next</span><strong>Accounts and cards</strong></a></nav></main></div>
+<footer class="foot">
+  <div class="wrap">
+    <span>Command Center · free · local-first. Your data stays on your computer.</span>
+    <span><a href="get-started.html">Docs</a> · <a href="data.html#privacy">Privacy</a> · <a href="https://github.com/sKittyKat/command-center-releases/releases">Releases</a></span>
+  </div>
+</footer>
+</body>
+</html>

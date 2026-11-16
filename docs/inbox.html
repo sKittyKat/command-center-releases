@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inbox: Gmail and Slack · Command Center</title>
+<meta name="description" content="Connect your work Gmail and Slack with apps you make yourself, pick Slack channels, let free rules and Claude sort your mail, get drafts in your voice, and keep the 24-hour watch on clients.">
+<meta property="og:title" content="Inbox: Gmail and Slack · Command Center">
+<meta property="og:description" content="Connect your work Gmail and Slack with apps you make yourself, pick Slack channels, let free rules and Claude sort your mail, get drafts in your voice, and keep the 24-hour watch on clients.">
+<meta property="og:image" content="assets/screens/today.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/icon.png" type="image/png">
+<link rel="preload" href="assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="top">
+  <a class="brand" href="./"><img src="assets/icon.png" alt="" width="28" height="28">Command Center</a>
+  <nav aria-label="Site">
+    <a href="get-started.html" aria-current="page">Docs</a>
+    <a class="hide-narrow" href="help.html">Help</a>
+    <a href="https://github.com/sKittyKat/command-center-releases/releases">Releases</a>
+  </nav>
+</header>
+<div class="docs"><aside class="sidebar" aria-label="Docs"><details open><summary>All docs</summary><nav><h2>Start</h2><ul><li><a href="get-started.html">Install and set up</a></li></ul><h2>Every day</h2><ul><li><a href="today.html">Today and the agenda</a></li><li><a href="touchpoints.html">Touchpoints and alerts</a></li><li><a href="inbox.html" aria-current="page">Inbox: Gmail and Slack</a></li><li><a href="projects.html">Projects and clients</a></li><li><a href="agents.html">Site agents</a></li><li><a href="money.html">Money and the books</a></li><li><a href="accounts.html">Accounts and cards</a></li></ul><h2>Your settings</h2><ul><li><a href="claude.html">Claude, guardrails and costs</a></li><li><a href="notion.html">Bringing in Notion</a></li><li><a href="data.html">Your data, backups and updates</a></li></ul><h2>Help</h2><ul><li><a href="help.html">Troubleshooting</a></li><li><a href="releases.html">Release notes</a></li></ul></nav></details></aside><main id="main" class="content"><h1>Inbox: Gmail and Slack</h1>
+<p class="lead">Your work email and Slack in one inbox, sorted for you. Free rules file the obvious, Claude sorts the rest if you let it, and nothing is ever sent but a reply you approve.</p>
+<figure><div class="shot"><img src="assets/screens/inbox-yours.png" width="1100" height="700" alt="The inbox: messages sorted into what needs you and what was filed, each with its client and a Reply card." loading="lazy" decoding="async"></div></figure>
+
+<h2 id="how">How it works</h2>
+<ul>
+  <li><strong>On this computer.</strong> Mail is read here and kept here, in your workspace. Each source uses an app you make yourself, for free, so no one else's app holds your mail.</li>
+  <li><strong>Replies only.</strong> Command Center sends only replies, only to where the message came from (its sender and thread, never an address the words ask for), and only on your click.</li>
+  <li><strong>Mail is data.</strong> A message that tries to give Claude instructions changes nothing.</li>
+  <li><strong>Who's who.</strong> A sender is matched to a client by their exact address, then by the client's own domain (for you to confirm), never by the name an email shows. Someone new comes to you to file: a client, a new client, or not a client.</li>
+</ul>
+
+<h2 id="gmail">Connect Gmail</h2>
+<p>About 10 minutes. You make a sign-in client in Google Cloud, with no billing.</p>
+<ol class="steps">
+  <li>At <a href="https://console.cloud.google.com">console.cloud.google.com</a>, signed in with your work account, make a project called Command Center.</li>
+  <li>APIs &amp; Services › Library: turn on the <strong>Gmail API</strong>.</li>
+  <li>Google Auth Platform: name it Command Center and set its audience to <strong>Internal</strong>. (Personal Gmail? See <a href="help.html#google-internal">Google won't let me choose Internal</a>.)</li>
+  <li>Data access: add <code>gmail.readonly</code> (to read your mail and past replies) and <code>gmail.send</code> (to send a reply you approve). Nothing else.</li>
+  <li>Clients › Create client › <strong>Desktop app</strong>. Paste its client ID and secret into Command Center and choose <strong>Save client</strong>.</li>
+  <li>Choose <strong>Sign in with Google</strong>. Google's page opens in your own browser; pick your work account and allow it. Your password never reaches Command Center.</li>
+</ol>
+<p>The first read takes the last 3 days of your inbox and about 20 of your sent replies (to learn your voice); after that it keeps up every couple of minutes.</p>
+
+<h2 id="slack">Connect Slack</h2>
+<p>About 5 minutes. You make an app in your own Slack workspace.</p>
+<ol class="steps">
+  <li>At <a href="https://api.slack.com/apps">api.slack.com/apps</a>, create an app from scratch called Command Center, in your workspace.</li>
+  <li><strong>Socket Mode</strong>: turn it on and make the app-level token it offers (<code>connections:write</code>). New messages arrive without a public server.</li>
+  <li><strong>OAuth &amp; Permissions › User Token Scopes</strong>: add <code>im:read</code>, <code>im:history</code>, <code>mpim:read</code>, <code>mpim:history</code> for your direct and group messages; <code>users:read</code> and <code>users:read.email</code> to match people to clients; <code>chat:write</code> to send a reply you approve; and, only if you want channels, <code>channels:read</code>, <code>channels:history</code>, <code>groups:read</code>, <code>groups:history</code>.</li>
+  <li><strong>Event Subscriptions</strong>: turn it on and subscribe, on behalf of users, to <code>message.im</code> and <code>message.mpim</code> (plus <code>message.channels</code> and <code>message.groups</code> for channels).</li>
+  <li><strong>Install to Workspace</strong>. Paste the app-level token (<code>xapp-…</code>) and the User OAuth Token (<code>xoxp-…</code>) into Command Center and choose <strong>Connect Slack</strong>.</li>
+</ol>
+
+<h3 id="channels">Slack channels</h3>
+<p>Once Slack is connected, choose <strong>List my channels</strong>. Turn <strong>Read</strong> on for each channel you want, Slack Connect channels shared with clients included, and say whose channel each is. Only the channels you pick are read. Your team's talk in a channel that isn't to you is filed by rule; a client's message, someone new, or anything naming you comes to you.</p>
+<figure><div class="shot"><img src="assets/screens/inbox-slack-yours.png" width="1100" height="700" alt="The inbox with Slack direct messages and channel messages beside email." loading="lazy" decoding="async"></div></figure>
+
+<div class="note"><p><strong>Texts</strong> (SMS, iMessage, WhatsApp) aren't read: there's no free, official way in for your own number.</p></div>
+
+<h2 id="sorting">Sorting</h2>
+<p>Every new message is sorted into what needs you and what doesn't:</p>
+<ol class="steps">
+  <li><strong>Free rules first.</strong> Newsletters, promotions, social and forum mail, mailing lists, no-reply senders, and anything you already answered are filed for free, with an undo. A client's mail is never filed by rule.</li>
+  <li><strong>Then Claude</strong>, if <strong>Claude sorts new mail</strong> is on: it sorts the rest into needs you, draft ready, or no reply needed.</li>
+  <li><strong>Then you.</strong> With Claude off, the rest waits for you, sorted by nothing but the rules.</li>
+</ol>
+
+<h2 id="drafts">Drafts in your voice</h2>
+<p>With <strong>Claude drafts replies</strong> on, a message that needs an answer gets a Reply card with Claude's draft, written in your voice from your own past replies (Settings › Sources › Inbox lists the samples, and you can remove any). With it off, the card has an empty reply for you to write. Either way, <strong>Edit</strong> shows exactly what will be sent and nothing goes until you approve it.</p>
+<p>Both switches ask before turning on, with the most a single call can cost. See <a href="claude.html#costs">what it costs</a>.</p>
+
+<h2 id="watch">The 24-hour watch</h2>
+<p>A client's message (or someone new at a client's domain) gets a reply deadline 24 hours after it arrived, weekends included, unless they asked sooner. It rises to the top of the agenda in its last 4 hours. Your reply from Command Center, Gmail or Slack marks it answered; when someone writes back on something you were waiting on, it comes back to you.</p>
+
+<h2 id="actions">On a message</h2>
+<ul>
+  <li><strong>Approve and send</strong> the reply, or <strong>Edit</strong> it first.</li>
+  <li><strong>No reply needed</strong> clears it, by you, with an undo.</li>
+  <li><strong>Snooze</strong> it, or file a new sender.</li>
+</ul>
+<p>Settings › Sources › Inbox keeps the week's record: sorted by Claude, by rule, by you, waiting, replies sent, and any client message past 24 hours.</p>
+<nav class="pager" aria-label="More docs"><a href="touchpoints.html"><span>Before</span><strong>Touchpoints and alerts</strong></a><a class="next" href="projects.html"><span>Next</span><strong>Projects and clients</strong></a></nav></main></div>
+<footer class="foot">
+  <div class="wrap">
+    <span>Command Center · free · local-first. Your data stays on your computer.</span>
+    <span><a href="get-started.html">Docs</a> · <a href="data.html#privacy">Privacy</a> · <a href="https://github.com/sKittyKat/command-center-releases/releases">Releases</a></span>
+  </div>
+</footer>
+</body>
+</html>

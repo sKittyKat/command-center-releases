@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site agents · Command Center</title>
+<meta name="description" content="Hand a site agent a change to one of your websites: it works on a copy, QA checks the result with seven checks, and nothing merges until you accept it.">
+<meta property="og:title" content="Site agents · Command Center">
+<meta property="og:description" content="Hand a site agent a change to one of your websites: it works on a copy, QA checks the result with seven checks, and nothing merges until you accept it.">
+<meta property="og:image" content="assets/screens/today.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/icon.png" type="image/png">
+<link rel="preload" href="assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="top">
+  <a class="brand" href="./"><img src="assets/icon.png" alt="" width="28" height="28">Command Center</a>
+  <nav aria-label="Site">
+    <a href="get-started.html" aria-current="page">Docs</a>
+    <a class="hide-narrow" href="help.html">Help</a>
+    <a href="https://github.com/sKittyKat/command-center-releases/releases">Releases</a>
+  </nav>
+</header>
+<div class="docs"><aside class="sidebar" aria-label="Docs"><details open><summary>All docs</summary><nav><h2>Start</h2><ul><li><a href="get-started.html">Install and set up</a></li></ul><h2>Every day</h2><ul><li><a href="today.html">Today and the agenda</a></li><li><a href="touchpoints.html">Touchpoints and alerts</a></li><li><a href="inbox.html">Inbox: Gmail and Slack</a></li><li><a href="projects.html">Projects and clients</a></li><li><a href="agents.html" aria-current="page">Site agents</a></li><li><a href="money.html">Money and the books</a></li><li><a href="accounts.html">Accounts and cards</a></li></ul><h2>Your settings</h2><ul><li><a href="claude.html">Claude, guardrails and costs</a></li><li><a href="notion.html">Bringing in Notion</a></li><li><a href="data.html">Your data, backups and updates</a></li></ul><h2>Help</h2><ul><li><a href="help.html">Troubleshooting</a></li><li><a href="releases.html">Release notes</a></li></ul></nav></details></aside><main id="main" class="content"><h1>Site agents</h1>
+<p class="lead">A site agent makes a change to one of your websites from a brief you write. It works on a copy, QA checks what it made, and nothing goes live until you choose <strong>Accept and merge</strong>.</p>
+
+<h2 id="sites">Add your sites</h2>
+<p>For each website, add its GitHub repository in Settings › Claude › Agents (or the set-up's <strong>Your sites</strong> step) with a <strong>fine-grained token</strong> for that one repository, with <strong>Contents</strong> and <strong>Pull requests</strong> read and write. The token stays in your keychain; no agent ever holds it.</p>
+
+<h2 id="run">A run, start to finish</h2>
+<ol class="steps">
+  <li><strong>Brief.</strong> Assign a project's work to an agent and write what you want. You see its budget ($5 to start) and confirm; it must fit within Claude's monthly cap.</li>
+  <li><strong>Work.</strong> Command Center hands the agent a copy of the site. The agent never touches GitHub itself: Command Center commits what it made, only to a branch of its own (<code>cc/…</code>).</li>
+  <li><strong>Questions.</strong> If the agent needs an answer, it reaches your agenda as a <strong>Reply</strong>; it waits for you even when other work runs on Auto.</li>
+  <li><strong>QA.</strong> Every change is checked before you see it (below). If it fails, the agent gets it back to fix, and you see the final round.</li>
+  <li><strong>Review.</strong> The finished work reaches <strong>Review</strong> with QA's results, what changed and its cost.</li>
+  <li><strong>Accept and merge.</strong> Merging is publishing, so it's always at least Approve. Only the exact commit QA passed is merged.</li>
+</ol>
+<figure><div class="shot"><img src="assets/screens/agents-run-review.png" width="1100" height="700" alt="A finished run in Review: QA's seven checks, the files that changed, its cost, and Accept and merge." loading="lazy" decoding="async"></div></figure>
+
+<h2 id="qa">The QA gate</h2>
+<p>Seven checks, out of the agent's hands. Four are Command Center's own, judged from the built site opened in a hidden, sandboxed window, never from the agent's report:</p>
+<ul>
+  <li><strong>The site builds</strong> with its own build command.</li>
+  <li><strong>Works on phones and desktops</strong>: every changed page lays out without sideways scrolling at 390 and 1440 pixels wide.</li>
+  <li><strong>No broken links or placeholder text</strong> on the changed pages.</li>
+  <li><strong>Accessibility basics</strong>: alt text, labelled fields, headings in order, and enough text contrast (axe-core).</li>
+</ul>
+<p>Three are graded by Claude:</p>
+<ul>
+  <li><strong>Matches the brief, and nothing else changed.</strong></li>
+  <li><strong>Copy proofread</strong>: spelled right, grammatical, in the site's own voice.</li>
+  <li><strong>Client summary written</strong>: two to four plain sentences for your client on what changed and why.</li>
+</ul>
+
+<h2 id="routes">Where agents run</h2>
+<ul>
+  <li><strong>Managed Agents</strong>: in Anthropic's sandbox, through your API key.</li>
+  <li><strong>Claude Code on this computer</strong>: with your Claude plan, in a folder of Command Center's own. It needs Git installed.</li>
+</ul>
+<p>Choose in Settings › Claude › Agents. Either way the run's cost counts against Claude's monthly cap, and a run can't spend past its budget.</p>
+
+<h2 id="control">Staying in control</h2>
+<ul>
+  <li><strong>Stop</strong> a run any time from the Agents screen.</li>
+  <li><strong>Review anyway</strong> looks at work QA didn't pass, if you want to.</li>
+  <li>The <strong>Assign agent tasks</strong> and <strong>Deploy or publish</strong> guardrails decide what needs your click; deploying is never Auto.</li>
+</ul>
+<nav class="pager" aria-label="More docs"><a href="projects.html"><span>Before</span><strong>Projects and clients</strong></a><a class="next" href="money.html"><span>Next</span><strong>Money and the books</strong></a></nav></main></div>
+<footer class="foot">
+  <div class="wrap">
+    <span>Command Center · free · local-first. Your data stays on your computer.</span>
+    <span><a href="get-started.html">Docs</a> · <a href="data.html#privacy">Privacy</a> · <a href="https://github.com/sKittyKat/command-center-releases/releases">Releases</a></span>
+  </div>
+</footer>
+</body>
+</html>

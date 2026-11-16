@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bringing in Notion · Command Center</title>
+<meta name="description" content="Import your clients, projects, milestones and contacts from Notion with a read-only connection, check what each database becomes, then retire Notion when nothing's left there.">
+<meta property="og:title" content="Bringing in Notion · Command Center">
+<meta property="og:description" content="Import your clients, projects, milestones and contacts from Notion with a read-only connection, check what each database becomes, then retire Notion when nothing's left there.">
+<meta property="og:image" content="assets/screens/today.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/icon.png" type="image/png">
+<link rel="preload" href="assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="top">
+  <a class="brand" href="./"><img src="assets/icon.png" alt="" width="28" height="28">Command Center</a>
+  <nav aria-label="Site">
+    <a href="get-started.html" aria-current="page">Docs</a>
+    <a class="hide-narrow" href="help.html">Help</a>
+    <a href="https://github.com/sKittyKat/command-center-releases/releases">Releases</a>
+  </nav>
+</header>
+<div class="docs"><aside class="sidebar" aria-label="Docs"><details open><summary>All docs</summary><nav><h2>Start</h2><ul><li><a href="get-started.html">Install and set up</a></li></ul><h2>Every day</h2><ul><li><a href="today.html">Today and the agenda</a></li><li><a href="touchpoints.html">Touchpoints and alerts</a></li><li><a href="inbox.html">Inbox: Gmail and Slack</a></li><li><a href="projects.html">Projects and clients</a></li><li><a href="agents.html">Site agents</a></li><li><a href="money.html">Money and the books</a></li><li><a href="accounts.html">Accounts and cards</a></li></ul><h2>Your settings</h2><ul><li><a href="claude.html">Claude, guardrails and costs</a></li><li><a href="notion.html" aria-current="page">Bringing in Notion</a></li><li><a href="data.html">Your data, backups and updates</a></li></ul><h2>Help</h2><ul><li><a href="help.html">Troubleshooting</a></li><li><a href="releases.html">Release notes</a></li></ul></nav></details></aside><main id="main" class="content"><h1>Bringing in Notion</h1>
+<p class="lead">If your clients and projects live in Notion, bring them into Command Center once, check nothing was missed, then retire Notion. Command Center only ever reads Notion; it never writes there.</p>
+
+<h2 id="connect">Connect</h2>
+<ol class="steps">
+  <li>At <a href="https://app.notion.com/developers/connections">app.notion.com/developers/connections</a>, as your workspace's owner, create an <strong>internal connection</strong> called Command Center.</li>
+  <li>On its Configuration tab, let it <strong>read content only</strong>: untick updating and inserting content and any comment boxes, and choose no user information.</li>
+  <li>On its Content access tab, pick every page and database you still use. A page's children come with it.</li>
+  <li>Copy its API token (it starts <code>ntn_</code>), paste it into Settings › Sources › Notion import, and choose <strong>Connect Notion</strong>. The token goes to your keychain.</li>
+</ol>
+
+<h2 id="import">Import</h2>
+<p>The <strong>Notion import</strong> card lists each database it can see and what it'll become: <strong>Clients</strong>, <strong>Projects</strong>, <strong>Milestones</strong>, <strong>Contacts</strong>, or <strong>Not imported</strong>. Its guess is just a guess until you choose.</p>
+<ul>
+  <li>Each page shows whether it'll be <strong>added</strong>, <strong>matched</strong> to something you already have (and left as you typed it), or <strong>doesn't fit</strong>, with why.</li>
+  <li>Choose <strong>Import</strong>. It's one change, with one <strong>Undo</strong> in the action log.</li>
+  <li>Set aside any page with <strong>Not needed</strong>.</li>
+</ul>
+<figure><div class="shot"><img src="assets/screens/settings-tab-reading-notion.png" width="1100" height="700" alt="The Notion import card: Import, then every page Command Center can see, with those still live in Notion and their Import, Not needed and Open buttons." loading="lazy" decoding="async"></div></figure>
+<p>Long lists show their first rows, with <strong>Show all</strong>.</p>
+
+<h2 id="live">Keeping an eye on what's left</h2>
+<p>Until you retire it, Notion is read again when you choose <strong>Check Notion now</strong> and at each touchpoint, before the brief. A page stays <strong>live</strong> while it's waiting, doesn't fit, sits outside your databases unsettled, or changed in Notion since you settled it. Open any page in your browser from its row.</p>
+
+<h2 id="retire">Retire Notion</h2>
+<p>The checklist has four lines. Two tick themselves: <strong>Notion read, with what you shared</strong> and <strong>Nothing live remains in Notion</strong>. Two you tick: <strong>Every page you still use is shared with the connection</strong>, and <strong>Your databases are locked in Notion</strong> (••• › Lock database). With all four ticked, choose <strong>Retire Notion</strong>. Command Center forgets the token, and the Sources row reads <strong>Retired</strong>.</p>
+<nav class="pager" aria-label="More docs"><a href="claude.html"><span>Before</span><strong>Claude, guardrails and costs</strong></a><a class="next" href="data.html"><span>Next</span><strong>Your data, backups and updates</strong></a></nav></main></div>
+<footer class="foot">
+  <div class="wrap">
+    <span>Command Center · free · local-first. Your data stays on your computer.</span>
+    <span><a href="get-started.html">Docs</a> · <a href="data.html#privacy">Privacy</a> · <a href="https://github.com/sKittyKat/command-center-releases/releases">Releases</a></span>
+  </div>
+</footer>
+</body>
+</html>
