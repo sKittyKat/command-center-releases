@@ -1,27 +1,38 @@
-<!-- {"title": "Bringing in Notion", "description": "Import your clients, projects, milestones and contacts from Notion with a read-only connection, check what each database becomes, then retire Notion when nothing's left there."} -->
+<!-- {"title": "Bringing in Notion", "description": "Import your clients, projects, milestones, contacts, contracts and accounts from Notion with a read-only connection, check what each database becomes, bring in later changes, then retire Notion when nothing's left there."} -->
 <h1>Bringing in Notion</h1>
 <p class="lead">If your clients and projects live in Notion, bring them into Command Center once, check nothing was missed, then retire Notion. Command Center only ever reads Notion; it never writes there.</p>
 
 <h2 id="connect">Connect</h2>
 <ol class="steps">
   <li>At <a href="https://app.notion.com/developers/connections">app.notion.com/developers/connections</a>, as your workspace's owner, create an <strong>internal connection</strong> called Command Center.</li>
-  <li>On its Configuration tab, let it <strong>read content only</strong>: untick updating and inserting content and any comment boxes, and choose no user information.</li>
+  <li>On its Configuration tab, let it <strong>read content only</strong>: untick updating and inserting content and any comment boxes. Under user information, choose <strong>Read user information without email addresses</strong>, so a page's people read as names, never email addresses.</li>
   <li>On its Content access tab, pick every page and database you still use. A page's children come with it.</li>
   <li>Copy its API token (it starts <code>ntn_</code>), paste it into Settings › Sources › Notion import, and choose <strong>Connect Notion</strong>. The token goes to your keychain.</li>
 </ol>
 
 <h2 id="import">Import</h2>
-<p>The <strong>Notion import</strong> card lists each database it can see and what it'll become: <strong>Clients</strong>, <strong>Projects</strong>, <strong>Milestones</strong>, <strong>Contacts</strong>, or <strong>Not imported</strong>. Its guess is just a guess until you choose.</p>
+<p>The <strong>Notion import</strong> card lists each database it can see and what it'll become: <strong>Clients</strong>, <strong>Projects</strong>, <strong>Milestones</strong>, <strong>Contacts</strong>, <strong>Contracts</strong>, <strong>Accounts</strong>, or <strong>Not imported</strong>. Its guess is just a guess until you choose.</p>
 <ul>
   <li>Each page shows whether it'll be <strong>added</strong>, <strong>matched</strong> to something you already have (and left as you typed it), or <strong>doesn't fit</strong>, with why.</li>
   <li>Choose <strong>Import</strong>. It's one change, with one <strong>Undo</strong> in the action log.</li>
   <li>Set aside any page with <strong>Not needed</strong>.</li>
 </ul>
 {{shot:settings-tab-reading-notion|The Notion import card: Import, then every page Command Center can see, with those still live in Notion and their Import, Not needed and Open buttons.}}
-<p>Long lists show their first rows, with <strong>Show all</strong>.</p>
+<p>Long lists show their first rows, with <strong>Show all</strong>. Big workspaces are fine: up to 20,000 pages and 200 databases, with the read's progress as it goes. Relations, rollups and formulas are read whole.</p>
+
+<h3 id="files">Files and secrets</h3>
+<ul>
+  <li><strong>A contract's file</strong> kept in Notion is copied into Command Center when you import it (up to 25 MB, from Notion's own file hosts only). A link to a file kept elsewhere opens in your browser from its row.</li>
+  <li><strong>Passwords, keys, tokens, PINs, recovery codes and card numbers are never read.</strong> A field named like one stays in Notion, and the card says so: keep it in your password manager.</li>
+</ul>
 
 <h2 id="live">Keeping an eye on what's left</h2>
 <p>Until you retire it, Notion is read again when you choose <strong>Check Notion now</strong> and at each touchpoint, before the brief. A page stays <strong>live</strong> while it's waiting, doesn't fit, sits outside your databases unsettled, or changed in Notion since you settled it. Open any page in your browser from its row.</p>
+<ul>
+  <li><strong>A page that changed in Notion</strong> after you imported it shows what changed, field by field. <strong>Bring in</strong> takes the change; where you changed the same field here too, pick <strong>Keep here</strong> or <strong>Use Notion</strong> for it. <strong>Checked</strong> leaves yours as it is. Either way you can undo it from the action log.</li>
+  <li><strong>Pages you haven't shared</strong> with the connection can't be read, but links to them are counted, so the card tells you how many to share.</li>
+  <li><strong>A page deleted in Notion</strong> counts as <strong>Gone from Notion</strong>, and the import is worked out again without it. An archived page is still read, marked <strong>Archived in Notion</strong>.</li>
+</ul>
 
 <h2 id="retire">Retire Notion</h2>
-<p>The checklist has four lines. Two tick themselves: <strong>Notion read, with what you shared</strong> and <strong>Nothing live remains in Notion</strong>. Two you tick: <strong>Every page you still use is shared with the connection</strong>, and <strong>Your databases are locked in Notion</strong> (••• › Lock database). With all four ticked, choose <strong>Retire Notion</strong>. Command Center forgets the token, and the Sources row reads <strong>Retired</strong>.</p>
+<p>The checklist has four lines. Three tick themselves: <strong>Notion read, with what you shared</strong>, <strong>Nothing live remains in Notion</strong>, and <strong>Your databases are locked in Notion</strong> once you lock each one you imported (••• › Lock database) and Notion says so; if Notion can't say, you tick it. You tick <strong>Every page you still use is shared with the connection</strong>. With all four ticked, choose <strong>Retire Notion</strong>. Command Center forgets the token, and the Sources row reads <strong>Retired</strong>.</p>

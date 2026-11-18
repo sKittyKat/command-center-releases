@@ -1,6 +1,6 @@
 # Command Center: the guide
 
-This guide is for version 0.2.2. It covers installing, setting up, daily use, what things cost, your data, and moving to
+This guide is for version 0.2.3. It covers installing, setting up, daily use, what things cost, your data, and moving to
 a new computer. The app's words are in **bold**.
 
 - [1. Install](#1-install)
@@ -138,13 +138,18 @@ If your clients and projects live in Notion, bring them in, then retire Notion. 
 never writes there.
 1. At app.notion.com/developers/connections, as your workspace's owner, create an **internal connection** called Command
    Center.
-2. On its Configuration tab, let it **read content only**: untick updating and inserting content and any comment boxes,
-   and choose no user information.
+2. On its Configuration tab, let it **read content only**: untick updating and inserting content and any comment boxes.
+   Under user information, choose **Read user information without email addresses**, so people read as names.
 3. On its Content access tab, pick every page and database you still use. A page's children come with it.
 4. Copy its API token (it starts `ntn_`), paste it in, and choose **Connect Notion**.
-5. In the **Notion import** card, check what each database becomes (Clients, Projects, Milestones, Contacts, or Not
-   imported), then choose **Import**. It's one change you can undo from the action log.
-6. When nothing live remains, tick the checklist and choose **Retire Notion**.
+5. In the **Notion import** card, check what each database becomes (Clients, Projects, Milestones, Contacts, Contracts,
+   Accounts, or Not imported), then choose **Import**. It's one change you can undo from the action log. A contract's
+   file kept in Notion is copied in. Passwords, keys and card numbers are never read: they stay in Notion, for your
+   password manager.
+6. If a page changes in Notion after you've imported it, its row shows what changed: **Bring in** takes the change (where
+   you changed the same field here too, pick **Keep here** or **Use Notion**), or **Checked** leaves yours as it is.
+7. When nothing live remains, lock your databases in Notion (••• › Lock database; that step ticks itself), tick the rest
+   of the checklist and choose **Retire Notion**.
 
 ### Step 7: Your sites
 
